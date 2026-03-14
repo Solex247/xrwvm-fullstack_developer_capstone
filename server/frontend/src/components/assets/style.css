@@ -1,125 +1,160 @@
-img{
-  width: 60%;
-  align-self: center;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg-0: #f7f4ef;
+  --bg-1: #edf6f5;
+  --ink: #1b1f24;
+  --muted: #5f6b7a;
+  --brand: #0b8f8a;
+  --brand-dark: #0a6f6a;
+  --accent: #ff7a59;
+  --card: #ffffff;
+  --border: #e3e7ef;
+  --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
-.card{
-  border: rgb(103, 102, 105) 3px solid;
-  display: flex;  
-  flex-direction: column;
-  margin-left:5%;
-  margin-right:5%;
-  margin-top: 1%;
-  margin-bottom: 1%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.row{
-  display: flex;  
-  flex: 1;
-  flex-direction: row;
-  margin: auto;
-  margin-top: 1%;
-  justify-content: center;
-  padding:20px;
+body {
+  margin: 0;
+  font-family: "Manrope", "Space Grotesk", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #dff4f1 0%, transparent 60%),
+    radial-gradient(900px 600px at 110% 10%, #ffe6dd 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
+  min-height: 100vh;
 }
 
-.container{
-  justify-content: center;
-}
-.details{
-  font-size: 20px;
-  color: rgb(97, 64, 128);
-  padding:20px;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-.title{
-  font-size: 20px;
-  background-color: rgb(97, 64, 128);
-  color: white;
-  text-align: center;
-  margin:20px;
-  padding:5px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.homepage_links{
-  color:  rgb(97, 64, 128);
-  padding: 25%;
-  font-size: larger;
-  }
+.page {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
 
-.loginlink{
+.top-nav {
+  margin: 22px auto 10px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+  padding: 10px 18px;
+}
+
+.brand {
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+  color: var(--muted);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: var(--ink);
+  background: rgba(11, 143, 138, 0.12);
+}
+
+.loginlink {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  gap: 14px;
+  align-items: center;
 }
 
-.banner{
-  display: flex;
-  flex-direction: column;
+.homepage_links {
+  color: var(--brand-dark);
+  font-weight: 600;
+  padding: 0;
+}
+
+.card-surface {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.btn-main,
+.btn-ghost {
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex:1
+  gap: 8px;
 }
 
-.form_panel {
-  padding:2%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 50px;
-  text-align:center;
-  box-shadow: 2px 2px 2px 3px #999;
-  margin: auto;
-  min-width: 350px;
-  width: 80%;
-  margin-top:3%
+.btn-main {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(11, 143, 138, 0.3);
 }
 
-.navitems{
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  flex: 1;
-  justify-content: flex-start;
-  justify-self: center;
+.btn-main:hover {
+  background: var(--brand-dark);
+  transform: translateY(-1px);
 }
 
-.nav_item{
-  margin-left:15px;
-  font-size: 20px;
-  color: black;
-  align-self: center;
+.btn-ghost {
+  background: #fff;
+  border-color: rgba(11, 143, 138, 0.35);
+  color: var(--brand-dark);
 }
 
-.username{
-  font: 30px sans-serif;
-  color:black;
-  justify-content: 'flex-end';
-  align-self:flex-end;
-  vertical-align: middle;
+.btn-ghost:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
 }
 
-.input_panel {
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  flex: 1;
-  justify-content:flex-end;
-  align-items: flex-end;
-  vertical-align: middle;
+.auth-link {
+  color: var(--brand-dark);
+  font-weight: 600;
 }
 
-.small_header{
-  font: 30px sans-serif;
-  color:black;
-  margin: .5cm;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.img_icon {
-  align-self: center;
-    width:40px;
-    background-color:#0C9;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    box-shadow: 2px 2px 3px #999;  
+@media (max-width: 680px) {
+  .top-nav {
+    padding: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

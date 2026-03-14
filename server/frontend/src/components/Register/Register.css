@@ -1,65 +1,97 @@
-.register_container{
+.modalContainer {
+  min-height: calc(100vh - 140px);
   display: flex;
-  flex-direction: column;
-  margin: auto;
-  margin-top: 2%;
-  background-color: darkturquoise;
-  min-width: 350px;
-  width: 30%;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px 80px;
 }
 
-.inputs{
+.register_container {
+  width: min(520px, 92vw);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 28px 30px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  animation: fadeUp 0.8s ease;
+}
+
+.header_row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header_row h2 {
+  margin: 0 0 6px;
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-size: 1.8rem;
+}
+
+.header_row p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.close_link img {
+  width: 32px;
+  height: 32px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
   align-items: center;
 }
 
-.input{
+.input_field {
+  height: 44px;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-family: inherit;
+}
+
+.submit_panel {
   display: flex;
-  flex-direction:row;
-  align-items: center;
+  flex-direction: column;
+  margin-top: 8px;
 }
 
-.input_field{
-  height:40px;
-  width:200px;
-  margin:.5cm;
-  font-size: medium;
-}
-
-.submit_panel{
-  display: flex;
-  flex-direction:column;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-.submit{
-  margin-left: 30%;
-  margin-right: 30%;
+.submit {
   cursor: pointer;
-  font-size: large;
-  color: rgb(97, 64, 128);
-  border-radius: 10px;
-  height:50px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 999px;
+  height: 48px;
+  border: none;
+  background: var(--brand);
+  box-shadow: 0 14px 30px rgba(11, 143, 138, 0.3);
 }
 
 .submit:hover {
-  background-color: wheat;
+  background: var(--brand-dark);
 }
 
-.header{
-  font: 4em sans-serif;
-  color: white;
-  margin: .5cm;
-}
-
-.img_icon{
-  width:40px;
-  margin:.1cm;
-  background-color:#0C9;
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  box-shadow: 2px 2px 3px #999;  
+.img_icon {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  background-color: rgba(11, 143, 138, 0.12);
+  border-radius: 50%;
+  box-shadow: none;
 }

@@ -1,86 +1,95 @@
-.navcontainer{
+.modalContainer {
+  min-height: calc(100vh - 140px);
   display: flex;
-  flex: 1;
-
-  flex-direction: row;
-  margin: auto;
-  margin-top: 2%;
-  background-color: rgb(97, 64, 128);
   align-items: flex-start;
-}
-
-.navitems{
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  flex: 1;
-  justify-content: flex-start;
-  justify-self: center;
-}
-
-.nav_item{
-  margin-left:15px;
-  font-size: 20px;
-  color: azure;
-  align-self: center;
-}
-
-.input_panel {
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  flex: 1;
-  justify-content: flex-end;
-  justify-self: center;
-}
-
-.input_field{
-  height:40px;
-  width:200px; 
-  font-size: medium;
-  margin:.5cm;
-}
-
-
-.action_button{
-  cursor: pointer;
-  font-size: large;
-  color: rgb(97, 64, 128);
-  border-radius: 10px;
-  height:40px;
-  padding-left:.5cm;
-  padding-right: .5cm;
-  margin: .5cm;
-}
-
-.submit:hover {
-  background-color: wheat;
-}
-
-.small_header{
-  font: 30px sans-serif;
-  color:azure;
-  margin: .5cm;
-}
-
-.username{
-  font: 30px sans-serif;
-  color:azure;
-  margin: .5cm;
-  justify-content: 'flex-end';
-  align-self:flex-end;
+  justify-content: center;
+  padding: 40px 16px 80px;
 }
 
 .login_panel {
+  width: min(420px, 92vw);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 28px 30px;
   display: flex;
   flex-direction: column;
-  margin:auto;
-  margin: 0 auto;
-  width: 50%; 
-  padding: 20px;
-  flex: 1;
-  justify-content:center;
+  gap: 18px;
+  animation: fadeUp 0.8s ease;
+}
+
+.auth-header h2 {
+  margin: 0 0 6px;
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-size: 1.8rem;
+}
+
+.auth-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.field_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field_label {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.field_input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+}
+
+.action_row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.action_button {
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 999px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  font-weight: 700;
+}
+
+.action_button.primary {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(11, 143, 138, 0.3);
+}
+
+.action_button.primary:hover {
+  background: var(--brand-dark);
+}
+
+.action_button.ghost {
+  background: #fff;
+  border-color: rgba(11, 143, 138, 0.35);
+  color: var(--brand-dark);
+}
+
+.action_button.ghost:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+.login_panel .loginlink {
+  margin-top: 4px;
+  color: var(--brand-dark);
+  font-weight: 600;
+  display: inline-flex;
   align-items: center;
-  vertical-align: middle;
-  
 }

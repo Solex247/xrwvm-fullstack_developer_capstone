@@ -50,20 +50,24 @@ const Login = ({ onClose }) => {
         }}
         className='modalContainer'
       >
-          <form className="login_panel" style={{}} onSubmit={login}>
-              <div>
-              <span className="input_field">Username </span>
-              <input type="text"  name="username" placeholder="Username" className="input_field" onChange={(e) => setUserName(e.target.value)}/>
+          <form className="login_panel" onSubmit={login}>
+              <div className="auth-header">
+                <h2>Sign in</h2>
+                <p>Access your dealership account.</p>
               </div>
-              <div>
-              <span className="input_field">Password </span>
-              <input name="psw" type="password"  placeholder="Password" className="input_field" onChange={(e) => setPassword(e.target.value)}/>            
+              <div className="field_group">
+                <label className="field_label" htmlFor="login-username">Username</label>
+                <input id="login-username" type="text" name="username" placeholder="Username" className="field_input" onChange={(e) => setUserName(e.target.value)}/>
               </div>
-              <div>
-              <input className="action_button" type="submit" value="Login"/>
-              <input className="action_button" type="button" value="Cancel" onClick={()=>setOpen(false)}/>
+              <div className="field_group">
+                <label className="field_label" htmlFor="login-password">Password</label>
+                <input id="login-password" name="psw" type="password"  placeholder="Password" className="field_input" onChange={(e) => setPassword(e.target.value)}/>            
               </div>
-              <a className="loginlink" href="/register">Register Now</a>
+              <div className="action_row">
+                <input className="action_button primary" type="submit" value="Login"/>
+                <input className="action_button ghost" type="button" value="Cancel" onClick={()=>setOpen(false)}/>
+              </div>
+              <a className="loginlink auth-link" href="/register">Register Now</a>
           </form>
       </div>
     </div>
