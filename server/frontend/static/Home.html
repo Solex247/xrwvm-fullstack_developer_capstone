@@ -1,64 +1,112 @@
 <html>
 <head>
+  <title>Dealerships</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="static/style.css">
-  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
 <script>
 
 const logout = async (e) => {
 //Include the code for logout here.
 };
 
-let checkSession = ()=>{
+let checkSession = ()=> {
   let curr_user = sessionStorage.getItem("username");
 
   if (curr_user && curr_user !== "") {
-    document.getElementById("loginlogout").innerHTML = 
+    document.getElementById("loginlogout").innerHTML =
     '<span class="homepage_links">' + curr_user +'</span>' +
     '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
   } else {
-    document.getElementById("loginlogout").innerHTML = 
+    document.getElementById("loginlogout").innerHTML =
     '<a class="homepage_links" href="/login">Login</a>'+
-    '<a class="homepage_links"  href="/register">Register</a>'
+    '<a class="homepage_links" href="/register">Register</a>'
   }
  }
 </script>
 </head>
 <body onload="checkSession()">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
-  <div class="container-fluid">
-    <h2 style="padding-right: 5%;">Dealerships</h2>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" style="font-size: larger;" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        <div class="loginlink" id="loginlogout">
-        </div>
+<div class="page">
+  <nav class="navbar navbar-expand-lg navbar-light top-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand brand" href="/">Dealerships</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" style="font-size: larger;" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <div class="loginlink" id="loginlogout">
+          </div>
         </span>
+      </div>
     </div>
-  </div>
-</nav>
-<div style="display: flex;flex-direction: column;">
-<div class="card" style="width: 50%;margin-top: 50px;align-self: center;">
-  <img src="static/car_dealership.jpg" class="card-img-top" alt="...">
-  <div class="banner">
-    <h5>Welcome to our Dealerships!</h5>
-    <a href="/dealers" class="btn" style="background-color: aqua;margin:10px">View Dealerships</a>
-  </div>
+  </nav>
 </div>
-</div>
+
+<main class="page">
+  <section class="hero card-surface">
+    <div class="hero-copy">
+      <span class="pill">Certified and transparent</span>
+      <h1>Find a car you will love, with support you can trust.</h1>
+      <p>
+        Browse verified inventory, compare models, and connect with local dealership experts.
+        We keep the process simple so you can drive away confident.
+      </p>
+      <div class="hero-actions">
+        <a href="/dealers" class="btn-main">View Dealerships</a>
+        <a href="/about" class="btn-ghost">How we help</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-card">
+          <strong>250+</strong>
+          Vehicles available
+        </div>
+        <div class="meta-card">
+          <strong>4.8/5</strong>
+          Average review score
+        </div>
+        <div class="meta-card">
+          <strong>Same-day</strong>
+          Test drive scheduling
+        </div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="/static/car_dealership.jpg" alt="Modern dealership showroom">
+      <div class="hero-badge">Trusted local experts</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">A modern way to shop for your next car</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Clear pricing</h3>
+        <p>Upfront estimates and trade-in guidance so you are never surprised at checkout.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Flexible financing</h3>
+        <p>Compare monthly plans, pre-qualify quickly, and keep everything in one place.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Service you can count on</h3>
+        <p>Certified technicians and a care team ready to support you after the sale.</p>
+      </div>
+    </div>
+  </section>
+  <div class="footer-note">Ready to explore? Start with dealerships in your area.</div>
+</main>
 </body>
 </html>

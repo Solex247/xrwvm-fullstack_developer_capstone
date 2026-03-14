@@ -1,11 +1,16 @@
 <html>
 <head>
-  <!-- Link the style sheet here -->
+  <title>About Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
 </head>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+<body>
+<div class="page">
+  <nav class="navbar navbar-expand-lg navbar-light top-nav">
     <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <a class="navbar-brand brand" href="/">Dealerships</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,45 +29,66 @@
       </div>
     </div>
   </nav>
-  
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    
 </div>
 
+<main class="page">
+  <section class="hero card-surface">
+    <div class="hero-copy">
+      <span class="pill">Built on trust</span>
+      <h1>People-first dealership experiences.</h1>
+      <p>
+        We help drivers find dependable vehicles through transparent pricing, guided support,
+        and ongoing service. Our team focuses on long-term relationships and honest advice.
+      </p>
+      <div class="hero-actions">
+        <a href="/dealers" class="btn-main">Browse inventory</a>
+        <a href="/contact" class="btn-ghost">Talk to our team</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-card">
+          <strong>15+ years</strong>
+          Local expertise
+        </div>
+        <div class="meta-card">
+          <strong>24/7</strong>
+          Online support
+        </div>
+        <div class="meta-card">
+          <strong>100%</strong>
+          Customer focused
+        </div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="/static/cars.jpeg" alt="Selection of dealership vehicles">
+      <div class="hero-badge">Certified inventory</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Meet the leadership team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="/static/person1.png" alt="Alex Johnson">
+        <h3>Alex Johnson</h3>
+        <div class="role">General Manager</div>
+        <p>Alex leads operations with a focus on trust, transparency, and community impact.</p>
+      </div>
+      <div class="team-card">
+        <img src="/static/person2.png" alt="Morgan Lee">
+        <h3>Morgan Lee</h3>
+        <div class="role">Sales Lead</div>
+        <p>Morgan matches customers to the right vehicles with clear guidance and empathy.</p>
+      </div>
+      <div class="team-card">
+        <img src="/static/person3.png" alt="Jordan Patel">
+        <h3>Jordan Patel</h3>
+        <div class="role">Service Manager</div>
+        <p>Jordan ensures every visit feels seamless, from quick check-ins to major repairs.</p>
+      </div>
+    </div>
+  </section>
+  <div class="footer-note">We are here to help you enjoy every mile.</div>
+</main>
+</body>
 </html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+  <title>Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+</head>
+<body>
+<div class="page">
+  <nav class="navbar navbar-expand-lg navbar-light top-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand brand" href="/">Dealerships</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<main class="page">
+  <section class="contact-grid">
+    <div class="contact-card">
+      <h2 class="section-title">Contact our team</h2>
+      <p class="details">
+        Reach out with questions about inventory, financing, or service appointments.
+        We respond quickly and keep every step simple.
+      </p>
+      <div class="contact-details">
+        <div><strong>Address:</strong> 1234 Market Street, Springfield, USA</div>
+        <div><strong>Phone:</strong> (555) 867-5309</div>
+        <div><strong>Email:</strong> support@dealerships.com</div>
+        <div><strong>Hours:</strong> Mon - Sat, 9:00 AM to 6:00 PM</div>
+      </div>
+      <img class="contact-illustration" src="/static/contactus.png" alt="Contact us">
+    </div>
+    <div class="form-card">
+      <h2 class="section-title">Send a message</h2>
+      <label for="name">Full name</label>
+      <input id="name" class="form-input" type="text" placeholder="Enter your name">
+      <label for="email">Email address</label>
+      <input id="email" class="form-input" type="email" placeholder="name@example.com">
+      <label for="topic">Topic</label>
+      <input id="topic" class="form-input" type="text" placeholder="Sales, service, financing">
+      <label for="message">How can we help?</label>
+      <textarea id="message" class="form-textarea" placeholder="Share details about your request"></textarea>
+      <button class="btn-main" type="button">Send message</button>
+    </div>
+  </section>
+  <div class="footer-note">We will get back to you within one business day.</div>
+</main>
+</body>
+</html>
