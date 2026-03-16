@@ -60,32 +60,62 @@ const Dealer = () => {
     get_dealer();
     get_reviews();
     if(sessionStorage.getItem("username")) {
-      setPostReview(<a href={post_review}><img src={review_icon} style={{width:'10%',marginLeft:'10px',marginTop:'10px'}} alt='Post Review'/></a>)
-
-      
+      setPostReview(
+        <a className="btn-main dealer-cta" href={post_review}>
+          <img src={review_icon} alt='Post Review'/>
+          Post a review
+        </a>
+      )
     }
   },[]);  
 
 
 return(
-  <div style={{margin:"20px"}}>
+  <div>
       <Header/>
-      <div style={{marginTop:"10px"}}>
-      <h1 style={{color:"grey"}}>{dealer.full_name}{postReview}</h1>
-      <h4  style={{color:"grey"}}>{dealer['city']},{dealer['address']}, Zip - {dealer['zip']}, {dealer['state']} </h4>
-      </div>
-      <div class="reviews_panel">
-      {reviews.length === 0 && unreviewed === false ? (
-        <text>Loading Reviews....</text>
-      ):  unreviewed === true? <div>No reviews yet! </div> :
-      reviews.map(review => (
-        <div className='review_panel'>
-          <img src={senti_icon(review.sentiment)} className="emotion_icon" alt='Sentiment'/>
-          <div className='review'>{review.review}</div>
-          <div className="reviewer">{review.name} {review.car_make} {review.car_model} {review.car_year}</div>
-        </div>
-      ))}
-    </div>  
+      <main className="page dealer-page">
+        <section className="card-surface dealer-hero">
+          <div>
+            <span className="eyebrow">Dealer profile</span>
+            <h1 className="section-title">{dealer.full_name}</h1>
+            <p className="section-lead">
+              {dealer['city']}, {dealer['address']}, Zip {dealer['zip']}, {dealer['state']}
+            </p>
+          </div>
+          <div className="dealer-actions">
+            {postReview}
+          </div>
+        </section>
+
+        <section className="dealer-reviews">
+          <div className="dealer-reviews-header">
+            <h2 className="section-subtitle">Customer reviews</h2>
+            <span className="review-count">{reviews.length} reviews</span>
+          </div>
+          {reviews.length === 0 && unreviewed === false ? (
+            <div className="empty-state">Loading reviews...</div>
+          ) : unreviewed === true ? (
+            <div className="empty-state">No reviews yet.</div>
+          ) : (
+            <div className="reviews-grid">
+              {reviews.map((review, index) => (
+                <div className="review-card card-surface" key={`${review.id || review.name}-${index}`}>
+                  <div className="review-card-header">
+                    <img src={senti_icon(review.sentiment)} className="review-emoji" alt='Sentiment'/>
+                    <span className={`sentiment-tag sentiment-${review.sentiment}`}>
+                      {review.sentiment}
+                    </span>
+                  </div>
+                  <p className="review-text">{review.review}</p>
+                  <div className="reviewer">
+                    {review.name} • {review.car_make} {review.car_model} {review.car_year}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      </main>
   </div>
 )
 }
