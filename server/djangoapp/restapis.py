@@ -14,7 +14,10 @@ sentiment_analyzer_url = os.getenv(
 if not backend_url or "your backend url" in backend_url:
     backend_url = "http://localhost:3030"
 
-if not sentiment_analyzer_url or "your code engine deployment url" in sentiment_analyzer_url:
+if (
+    not sentiment_analyzer_url
+    or "your code engine deployment url" in sentiment_analyzer_url
+):
     sentiment_analyzer_url = "http://localhost:5050/"
 
 backend_url = backend_url.rstrip("/")

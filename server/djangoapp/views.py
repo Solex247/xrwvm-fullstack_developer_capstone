@@ -41,12 +41,16 @@ def login_user(request):
         data = {"userName": username, "status": "Authenticated"}
     return JsonResponse(data)
 
+
+
 # Create a `logout_request` view to handle sign out request
 @csrf_exempt
 def logout_request(request):
     logout(request)
     data = {"userName": ""}
     return JsonResponse(data)
+
+
 
 # Create a `registration` view to handle sign up request
 @csrf_exempt
@@ -72,6 +76,7 @@ def registration(request):
     return JsonResponse({"userName": username, "status": "Authenticated"})
 
 
+
 def get_cars(request):
     count = CarMake.objects.filter().count()
     if count == 0:
@@ -85,6 +90,7 @@ def get_cars(request):
     return JsonResponse({"CarModels": cars})
 
 
+
 def get_dealerships(request, state="All"):
     if state == "All":
         endpoint = "/fetchDealers"
@@ -96,12 +102,14 @@ def get_dealerships(request, state="All"):
     return JsonResponse({"status": 200, "dealers": dealerships})
 
 
+
 def get_dealer_details(request, dealer_id):
     endpoint = f"/fetchDealer/{dealer_id}"
     dealer = get_request(endpoint)
     if dealer is None:
         dealer = []
     return JsonResponse({"status": 200, "dealer": dealer})
+
 
 
 def get_dealer_reviews(request, dealer_id):
@@ -118,6 +126,7 @@ def get_dealer_reviews(request, dealer_id):
     return JsonResponse({"status": 200, "reviews": reviews})
 
 
+
 @csrf_exempt
 def add_review(request):
     if request.user.is_anonymous is False:
@@ -126,5 +135,7 @@ def add_review(request):
             post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
-            return JsonResponse({"status": 401, "message": "Error in posting review"})
+            return JsonResponse(
+                {"status": 401, "message": "Error in posting review"}
+            )
     return JsonResponse({"status": 403, "message": "Unauthorized"})
