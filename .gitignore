@@ -102,7 +102,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -134,3 +133,8 @@ frontend/node_modules/
 frontend/build/
 frontend/.npm-cache/
 .npm-cache/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+config.bat
